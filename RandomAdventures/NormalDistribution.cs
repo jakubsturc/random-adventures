@@ -1,24 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-using static System.Math;
+﻿using static System.Math;
 
 namespace JakubSturc.RandomAdventures
 {
     public class NormalDistribution : IDistribution<double>
     {
-        public double Mean { get; }
-        public double Sigma { get; }
-        public double μ => Mean;
-        public double σ => Sigma;
+        public double μ { get; }
+        public double σ { get; }
 
         private UniformDistribution _uniformDistribution;
         
         public NormalDistribution(IRandom rnd, double mean, double sigma)
         {
-            Mean = mean;
-            Sigma = sigma;
+            μ = mean;
+            σ = sigma;
 
             _uniformDistribution = new UniformDistribution(rnd);
         }
